@@ -48,7 +48,7 @@ html {
 TYPOGRAPHY
 =================================*/
 html {
-	--font-display: Futura, arial, sans-serif;;
+	--font-display: Futura, arial, sans-serif;
 	--font-primary: 'EB Garamond', 'Times New Roman', serif;
 
 	color: var(--color-shade-dark);
@@ -80,23 +80,31 @@ p, li {
 /*header styles*/
 
 h1 {
+	font-family: var(--font-display);
 	font-size: var(--size-up-three);
+	font-style: italic;
 	max-width: 95%;
 }
 
 h2 {
+	font-family: var(--font-display);
 	font-size: var(--size-up-two);
+	font-style: italic;
 	max-width: ;
 	padding-left: 1rem;
 }
 
 h3 {
+	font-family: var(--font-display);
 	font-size: var(--size-up-one);
+	font-style: italic;
 	padding-left: 2rem;
 }
 
 h4, h5, h6 {
+	font-family: var(--font-display);
 	font-size: var(--base-size);
+	font-style: italic;
 	padding-left: 3rem;
 }
 
@@ -192,8 +200,8 @@ header li, footer li {
 		width: 90%;
 	}
 
-	.logo a{
-		color: var(--color-shade);
+	.logo a, h1{
+		color: var(--color-shade-light);
 		display: inline-block;
 		font-family: var(--font-display);
 		font-style: italic;
@@ -280,8 +288,36 @@ header li, footer li {
 
 
 /*=================================
-FOOTER COMPONENT
+Resumé
 =================================*/
+.resume-section {
+	background-color: var(--color-shade);
+}
+
+.resume-section h2 {
+	font-size: var(--base-size);
+	background-color: var(--color-red-light);
+}
+
+.resume-section h3 {
+	font-size: var(--size-down-one);
+}
+
+
+.resume-entry-description {
+	background-color: var(--color-shade-light);
+	border-bottom: 5px solid var(--color-yellow-dark);
+}
+
+
+.resume-list {
+	list-style-type: circle;
+	padding-left: 1.2rem;
+}
+
+.resume-entry {
+
+}
 
 /*=================================
 BLOCKQUOTES and CITES
