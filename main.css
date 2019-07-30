@@ -24,9 +24,9 @@ img {
 COLORS COMPONENT
 =================================*/
 html {
-	--color-blue: #5da9e9;
+	--color-blue: #6577ac;
 	--color-blue-dark: #253974;
-	--color-blue-light: #6577ac; 
+	--color-blue-light: #5da9e9; 
 
 	--color-red: #a62639;
 	--color-red-dark: #791c2a;
@@ -66,9 +66,9 @@ html {
 	--size-up-two: calc(var(--ratio) * var(--size-up-one));
 	--size-up-three: calc(var(--ratio) * var(--size-up-two));
 
-	--size-down-one: calc(var(---recip-ratio) * var(--base-size));
-	--size-down-two: calc(var(---recip-ratio) * var(--size-down-one));
-	--size-down-three: calc(var(---recip-ratio) * var(--size-down-two));
+	--size-down-one: calc(var(--recip-ratio) * var(--base-size));
+	--size-down-two: calc(var(--recip-ratio) * var(--size-down-one));
+	--size-down-three: calc(var(--recip-ratio) * var(--size-down-two));
 
 }
 
@@ -98,7 +98,7 @@ h3 {
 	font-family: var(--font-display);
 	font-size: var(--size-up-one);
 	font-style: italic;
-	padding-left: 2rem;
+	padding-left: .7rem;
 }
 
 h4, h5, h6 {
@@ -143,10 +143,19 @@ a h1, a h2, a h3, a h4, a h5 {
 /*=================================
 PAGE LAYOUT
 =================================*/
+html {
+	--open-section: 2rem 0 100% 0;;
+	--close-section: 100% 0 2rem 0;
+	background-color: var(--color-blue);
+}
 
 main {
+	background-color: var(--color-shade);
 	margin: 4rem .2rem 4rem .2rem;
+	padding: 2rem .3rem .5rem .3rem;
 }
+
+
 
 /*=================================
 HEADER and FOOTER COMPONENTS
@@ -197,16 +206,18 @@ header li, footer li {
 		margin: 0 0 .7rem 0;
 		padding: 20px;
 		position: relative;
-		width: 90%;
+		width: 100%;
 	}
 
+	.logo a {
+		position: absolute;
+	}
 	.logo a, h1{
 		color: var(--color-shade-light);
 		display: inline-block;
 		font-family: var(--font-display);
 		font-style: italic;
 		font-weight: bold;
-		position: absolute;
 		text-shadow: 2px 2px 0 var(--color-shade-dark), 4px 4px 0 var(--color-red);
 	}
 
@@ -291,34 +302,90 @@ header li, footer li {
 Resumé
 =================================*/
 .resume-section {
-	background-color: var(--color-shade);
+	margin-bottom: 4rem;
 }
 
 .resume-section h2 {
+	background-color: var(--color-shade-dark);
+	border-bottom: 5px solid var(--color-red-dark);
+	border-top: 5px solid var(--color-red-dark);
+	color: var(--color-shade-light);
 	font-size: var(--base-size);
-	background-color: var(--color-red-light);
+	margin-bottom: .5rem;
+	text-shadow: 2px 2px 0 var(--color-red-dark);
 }
 
 .resume-section h3 {
+	background-color: var(--color-shade);
+	border-bottom: 5px solid var(--color-red-dark);
+	color: var(--color-shade-dark);
 	font-size: var(--size-down-one);
+	margin-bottom: .2rem;
+	text-shadow: 2px 2px 0 var(--color-shade-light);
 }
 
-
-.resume-entry-description {
-	background-color: var(--color-shade-light);
-	border-bottom: 5px solid var(--color-yellow-dark);
+.resume-entry {
+	background-color: var(--color-red-light);
+	border-radius: var(--open-section);
+	margin-bottom: 1rem;
 }
 
+.resume-entry h4{
+
+	color: var(--color-shade-dark);
+	font-size: var(--size-down-two);
+	max-width: 90%;
+	padding: 1rem;
+	text-shadow: 1px 1px 0 var(--color-shade);
+}
+
+.resume-setting {
+	margin-bottom: 1rem;
+	text-align: right;
+}
 
 .resume-list {
 	list-style-type: circle;
 	padding-left: 1.2rem;
 }
 
-.resume-entry {
+
+/*=================================================
+// Contact Page
+=================================================*/
+.contact-form {
+	margin: 1rem 3rem 1rem 3rem;
+}
+
+form {
+	background-color: var(--color-red-light);
+	border-radius: var(--close-section);
+	margin: 1rem auto 1rem auto;
+	padding-bottom: 2rem;
+}
+
+input, textarea, label {
+	box-sizing: border-box;
+	display: block;
+	margin-top:1rem 0;
+	width: 100%;
+}
+
+input[type=Submit] {
+	margin-top: 1rem;
+	width: 100%;
+}
+
+label {
+	color: var(--color-shade-dark);
+	text-align: left;
 
 }
 
+textarea {
+	min-height: 5rem;
+	
+}
 /*=================================
 BLOCKQUOTES and CITES
 =================================*/
