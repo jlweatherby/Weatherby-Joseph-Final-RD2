@@ -155,6 +155,27 @@ main {
 	padding: 2rem .3rem .5rem .3rem;
 }
 
+.hero {
+	background-color: var(--color-shade-light);
+	border-radius: var(--close-section);
+	padding: .3rem;
+}
+
+.hero h1 {
+	margin-bottom: 1rem;
+	text-shadow: -2px 2px 0 var(--color-red), -4px 4px 0 var(--color-shade-dark), 10px 4px 40px var(--color-shade-dark);
+
+}
+
+@media (min-width: 1000px) {
+	.hero {
+		align-items: center;
+		display: flex;
+		justify-content: space-around;
+	}
+}
+
+
 
 
 /*=================================
@@ -198,7 +219,7 @@ header li, footer li {
 
 	.logo {
 		background-color: var(--color-shade-dark);
-		border-radius: 2rem 0 100% 0;
+		border-radius: var(--open-section);
 		font-size: 2.3rem;
 		height: 4rem;
 		letter-spacing: -.08rem;
