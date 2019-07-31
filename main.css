@@ -161,6 +161,10 @@ main {
 	padding: .3rem;
 }
 
+.hero img {
+	margin: auto;
+}
+
 .hero h1 {
 	margin-bottom: 1rem;
 	text-shadow: -2px 2px 0 var(--color-red), -4px 4px 0 var(--color-shade-dark), 10px 4px 40px var(--color-shade-dark);
@@ -218,7 +222,7 @@ header li, footer li {
 }
 
 	.logo {
-		background-color: var(--color-shade-dark);
+		background-color: var(--color-blue-dark);
 		border-radius: var(--open-section);
 		font-size: 2.3rem;
 		height: 4rem;
@@ -346,7 +350,7 @@ Resumé
 }
 
 .resume-entry {
-	background-color: var(--color-red-light);
+	background-color: var(--color-blue);
 	border-radius: var(--open-section);
 	margin-bottom: 1rem;
 }
@@ -430,6 +434,21 @@ Forms
 /*=================================
 CARDS
 =================================*/
+
+.portfolio-card {
+	position: relative;
+}
+
+.portfolio-card div{
+	background-color: #f9e484b3;
+	border-radius: 100% 0 0 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	text-align: right;
+}
+
+
 
 /*=================================
 NOTIFICATIONS
