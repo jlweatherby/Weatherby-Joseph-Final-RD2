@@ -151,24 +151,29 @@ html {
 
 main {
 	background-color: var(--color-shade);
-	margin: 4rem .2rem 4rem .2rem;
+	margin: 4rem auto;
 	padding: 2rem .3rem .5rem .3rem;
 }
 
 .hero {
 	background-color: var(--color-shade-light);
 	border-radius: var(--close-section);
-	padding: .3rem;
+	padding: 7rem 2rem 4rem 2rem;
+	text-align: center;
 }
 
-.hero img {
+.hero div {
+	display: inline-block;
+	text-align: left;
+}
+
+.hero img, .hero div {
 	margin: auto;
 }
 
 .hero h1 {
 	margin-bottom: 1rem;
 	text-shadow: -2px 2px 0 var(--color-red), -4px 4px 0 var(--color-shade-dark), 10px 4px 40px var(--color-shade-dark);
-
 }
 
 @media (min-width: 1000px) {
@@ -180,7 +185,51 @@ main {
 }
 
 
+.link-button {
+	background-color: var(--color-blue);
+	border: 6px solid;
+	border-radius: 3rem;
+	box-shadow: 0 2px 15px var(--color-shade-dark);
+	color: var(--color-shade-light);
+	display: block;
+	font-size: var(--size-up-one);
+	margin: auto;
+	padding: 2rem;
+	position: fixed;
+	right: 2rem;
+	top: 13rem;
+	transition: all .5s;
+}
 
+.link-button:visited {
+	color: var(--color-shade-light);
+}
+
+.link-button:hover, .link-button:focus {
+	color: var(--color-shade-light);
+	font-size: var(--size-up-two);
+	padding: .5rem;
+	text-shadow: -2px 2px 0 var(--color-red), -4px 4px 0 var(--color-shade-dark), 10px 4px 40px var(--color-shade-dark);
+	transform: scale(1.2);
+	transition: all .5s ease;
+}
+
+.link-button:active {
+	box-shadow: 4px 4px rgba(0,0,0,.3) inset;
+	transform: scale(.9);
+}
+
+@media (min-width: 1000px) {
+	.link-button {
+		right: 10rem;
+	}
+}
+
+@media (min-width: 1500px) {
+	.link-button {
+		right: 20rem;
+	}
+}
 
 /*=================================
 HEADER and FOOTER COMPONENTS
@@ -237,7 +286,8 @@ header li, footer li {
 	.logo a {
 		position: absolute;
 	}
-	.logo a, h1{
+
+	.logo a, h1, .link-button{
 		color: var(--color-shade-light);
 		display: inline-block;
 		font-family: var(--font-display);
@@ -246,9 +296,10 @@ header li, footer li {
 		text-shadow: 2px 2px 0 var(--color-shade-dark), 4px 4px 0 var(--color-red);
 	}
 
-	.logo a:hover {
+	.logo a:hover, .link-button a{
 		background-color: transparent;
 		border-radius: 100% 0 2rem 0;
+		color: var(--color-shade-light);
 		padding: .5rem;
 		text-shadow: -2px 2px 0 var(--color-red), -4px 4px 0 var(--color-shade-dark), 10px 4px 40px var(--color-shade-dark);
 		transform: scale(1.2);
@@ -269,11 +320,9 @@ header li, footer li {
 		@media (min-width: 600px) {
 			header {
 				flex-direction: row;
-
 			}
 			header ul, footer ul{
 				justify-content: space-evenly;
-
 			}
 			header li, footer ul{
 				margin-left: 1rem;
@@ -298,7 +347,6 @@ header li, footer li {
 			footer ul {
 				justify-content: space-evenly;
 				width: 	17rem;
-
 			}
 			footer li {
 				margin-left: 1rem;
@@ -306,7 +354,6 @@ header li, footer li {
 		}
 
 		footer .logo {
-
 			border-radius: 100% 0 2rem 0;
 		}
 
@@ -353,25 +400,25 @@ Resumé
 	background-color: var(--color-blue);
 	border-radius: var(--open-section);
 	margin-bottom: 1rem;
+	padding-bottom: 3rem;
 }
 
 .resume-entry h4{
-
 	color: var(--color-shade-dark);
-	font-size: var(--size-down-two);
+	font-size: var(--size-down-one);
 	max-width: 90%;
 	padding: 1rem;
 	text-shadow: 1px 1px 0 var(--color-shade);
 }
 
 .resume-setting {
-	margin-bottom: 1rem;
-	text-align: right;
+	background-color: #9e9e9e80;;
+	padding: .5rem 0 1rem 3rem;
 }
 
 .resume-list {
 	list-style-type: circle;
-	padding-left: 1.2rem;
+	padding-left: 2rem;
 }
 
 
@@ -404,65 +451,130 @@ input[type=Submit] {
 label {
 	color: var(--color-shade-dark);
 	text-align: left;
-
 }
 
 textarea {
 	min-height: 5rem;
 	
 }
-/*=================================
-BLOCKQUOTES and CITES
-=================================*/
-
-/*=================================
-BUTTON LINKS
-=================================*/
-
-/*=================================
-ACCORDIONS
-=================================*/
-
-/*=================================
-DIALOGS
-=================================*/
-
-/*============================================
-Forms
-=============================================*/
 
 /*=================================
 CARDS
 =================================*/
 
-.portfolio-card {
-	position: relative;
+.portfolio-grid {
+	display: grid;
+	grid-template-columns: 355px;
+	grid-auto-rows: 355px;
+	margin: auto;
 }
 
-.portfolio-card div{
+.portfolio-card {
+	background-color: var(--color-shade-light);
+	border: .5px solid var(--color-shade);
+	position: relative;
+	margin: 0;
+	vertical-align: bottom;
+	max-width: 360px;
+}
+
+.portfolio-card img {
+	max-width: 100%;
+}
+
+.portfolio-card div h2{
 	background-color: #f9e484b3;
 	border-radius: 100% 0 0 0;
 	bottom: 0;
 	right: 0;
 	position: absolute;
-	text-align: right;
 }
 
 
+.card-description {
+	background-color: #9e9e9eb3;
+	border-radius: none;
+	bottom: 40%;
+	color: var(--color-shade-dark);
+	opacity: 0;
+	padding: 1rem;
+	position: absolute;
+	visibility: hidden;
+	
+}
 
-/*=================================
-NOTIFICATIONS
-=================================*/
+.portfolio-card:hover .card-description {
+	visibility: visible;
+	opacity: 1;
+}
 
-/*error notification*/
+.card-description a:hover {
+	color: red;
+}
 
-/*warning notification*/
+@media (min-width: 620px) {
+	.portfolio-grid {
+		grid-template-columns: 300px 300px;
+		grid-auto-rows: 300px;
+	}
 
-/*neutral notification*/
+	.portfolio-card h2 {
+		font-size: var(--size-up-one);
+		padding-right: 3px;
+		text-align: right;
+	}
+}
 
-/*success notification*/
+@media (min-width: 775px) {
+	.portfolio-grid {
+		grid-template-columns: 250px 250px 250px;
+		grid-auto-rows: 250px;
+	}
 
-/*=================================
-EXAMPLES
-=================================*/
+	.portfolio-card h2 {
+		font-size: var(--base-size);
+	}
+}
+
+
+@media (min-width: 1030px) {
+	.portfolio-grid {
+		grid-template-columns: 250px 250px 250px 250px;
+		grid-auto-rows: 250px;
+	}
+
+	.portfolio-card h2 {
+		font-size: var(--size-down-one);
+	}
+}
+
+.portfolio-card {
+	background-color: var(--color-shade-light);
+	border: .5px solid var(--color-shade);
+	position: relative;
+	margin: 0;
+	vertical-align: bottom;
+	max-width: 360px;
+}
+
+.portfolio-card img {
+	max-width: 100%;
+}
+
+.portfolio-card .title{
+	background-color: #f9e484b3;
+	border-radius: 100% 0 0 0;
+	bottom: 0;
+	height: 10%;
+	position: absolute;
+	right: 0;
+	width: 90%;
+}
+
+.portfolio-card h2{
+	padding-right: 3px;
+	text-align: right;
+	
+}
+
 
