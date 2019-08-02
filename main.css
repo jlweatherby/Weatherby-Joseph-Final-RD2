@@ -577,4 +577,10 @@ CARDS
 	
 }
 
+.grid-filler {
+	height: 100%;
+	overflow: hidden;
+
+}
+
 
