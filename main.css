@@ -462,7 +462,7 @@ textarea {
 CARDS
 =================================*/
 
-.portfolio-grid {
+.portfolio-grid, .clickthrough-grid {
 	display: grid;
 	grid-template-columns: 355px;
 	grid-auto-rows: 355px;
@@ -490,8 +490,7 @@ CARDS
 	position: absolute;
 }
 
-
-.card-description {
+.portfolio-grid .card-description, .clickthrough-box .card-description {
 	background-color: #9e9e9eb3;
 	border-radius: none;
 	bottom: 40%;
@@ -506,6 +505,7 @@ CARDS
 .portfolio-card:hover .card-description {
 	visibility: visible;
 	opacity: 1;
+	transition: all .5s ease;
 }
 
 .card-description a:hover {
@@ -513,7 +513,7 @@ CARDS
 }
 
 @media (min-width: 620px) {
-	.portfolio-grid {
+	.portfolio-grid  {
 		grid-template-columns: 300px 300px;
 		grid-auto-rows: 300px;
 	}
@@ -526,7 +526,7 @@ CARDS
 }
 
 @media (min-width: 775px) {
-	.portfolio-grid {
+	.portfolio-grid{
 		grid-template-columns: 250px 250px 250px;
 		grid-auto-rows: 250px;
 	}
@@ -538,7 +538,7 @@ CARDS
 
 
 @media (min-width: 1030px) {
-	.portfolio-grid {
+	.portfolio-grid{
 		grid-template-columns: 250px 250px 250px 250px;
 		grid-auto-rows: 250px;
 	}
@@ -565,7 +565,7 @@ CARDS
 	background-color: #f9e484b3;
 	border-radius: 100% 0 0 0;
 	bottom: 0;
-	height: 10%;
+	height: 15%;
 	position: absolute;
 	right: 0;
 	width: 90%;
@@ -579,10 +579,32 @@ CARDS
 
 /*-Grid styles------portfolio-clickthrough-pages-*/
 
-.grid-filler {
-	height: 100%;
-	overflow: hidden;
 
+
+.clickthrough-box .card-description{
+	background-color: #9e9e9eb3;
+	border-radius: none;
+	color: var(--color-shade-dark);
+	opacity: 0;
+	padding: 1rem;
+	position: absolute;
+	visibility: hidden;
+	
 }
+
+@media (min-width: 775px) {
+	.clickthrough-box{
+		display: flex;
+	}
+	.clickthrough-box .card-description {
+		height: 350px;
+		top: 0rem;
+	}
+
+	.clickthrough-box .filler-photo{
+		height: 350px;
+	}
+}
+
 
 
